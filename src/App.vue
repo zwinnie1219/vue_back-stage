@@ -21,4 +21,11 @@ export default {
 };
 </script>
 
-<style></style>
+<style lang="less">
+html,
+body,
+h3 {
+  padding: 0;
+  margin: 0;
+}
+</style>

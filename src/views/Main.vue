@@ -1,16 +1,22 @@
 <template>
   <div>
-    <h1>main</h1>
-    <RouterView />
+    <el-container>
+      <el-aside><CommonAside /></el-aside>
+      <el-container>
+        <el-header>Header</el-header>
+        <el-main> <RouterView /></el-main>
+      </el-container>
+    </el-container>
   </div>
 </template>
 <script>
-import { RouterView } from "vue-router";
-
+import CommonAside from "../components/CommonAside.vue";
 export default {
   data() {
     return {};
   },
-  components: { RouterView },
+  components: {
+    CommonAside,
+  },
 };
 </script>
