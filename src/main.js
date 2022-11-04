@@ -19,6 +19,7 @@ import {
 import "element-ui/lib/theme-chalk/index.css";
 import App from "./App.vue";
 import router from "./router/index";
+import store from "./store/index";
 
 Vue.config.productionTip = false;
 
@@ -38,7 +39,10 @@ Vue.use(MenuItemGroup);
 Vue.use(dropdownMenu);
 Vue.use(dropdownItem);
 Vue.use(dropdown);
+
+//挂载到vue实例中，就可以使用this.$...访问到该方法
 new Vue({
   router,
+  store,
   render: (h) => h(App),
 }).$mount("#app");

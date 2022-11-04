@@ -1,7 +1,7 @@
 <template>
   <div class="heardBox">
     <div class="l-hearder">
-      <el-button icon="el-icon-menu"></el-button>
+      <el-button icon="el-icon-menu" @click="changeState"></el-button>
       <span class="headerHomePage">首页</span>
     </div>
     <div class="r-hearder">
@@ -22,6 +22,11 @@
 <script>
 export default {
   data() {},
+  methods: {
+    changeState() {
+      this.$store.commit("collapseMenu");
+    },
+  },
 };
 </script>
 

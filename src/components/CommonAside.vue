@@ -8,7 +8,7 @@
     text-color="#fff"
     active-text-color="#ffd04b"
   >
-    <h3>通用后台管理系统</h3>
+    <h3>{{ isCollapse ? "后台" : "通用后台管理系统" }}</h3>
     <el-menu-item
       v-for="item in noClidren"
       :index="item.name"
@@ -41,7 +41,6 @@
 export default {
   data() {
     return {
-      isCollapse: false,
       menuDate: [
         {
           path: "/",
@@ -94,6 +93,7 @@ export default {
     handleClose(key, keyPath) {
       console.log(key, keyPath);
     },
+
     //router:整个router实例
     //route:当前页面的path路径
     clickMenu(item) {
@@ -123,18 +123,25 @@ export default {
     hasClidren() {
       return this.menuDate.filter((item) => item.children);
     },
+
+    isCollapse() {
+      const iscoll = this.$store.state.tab.isCollapse;
+      return iscoll;
+    },
   },
 };
 </script>
 
 <style lang="less" scoped>
 .el-menu-vertical-demo:not(.el-menu--collapse) {
-  width: 300px;
   min-height: 400px;
+}
+.el-menu-vertical-demo {
+  border: 0ch;
 }
 .el-menu {
   height: 100vh;
-  padding: 0;
+  padding: 0 10px;
   h3 {
     color: aliceblue;
     text-align: center;

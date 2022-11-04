@@ -1,7 +1,7 @@
 <template>
   <div>
     <el-container>
-      <el-aside><CommonAside /></el-aside>
+      <el-aside width="auto"><CommonAside /></el-aside>
       <el-container>
         <el-header><CommonHeader /></el-header>
         <el-main> <RouterView /></el-main>
