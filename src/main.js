@@ -11,6 +11,9 @@ import {
   submenu,
   menuItem,
   MenuItemGroup,
+  dropdownMenu,
+  dropdownItem,
+  dropdown,
 } from "element-ui";
 
 import "element-ui/lib/theme-chalk/index.css";
@@ -32,7 +35,9 @@ Vue.use(menu);
 Vue.use(submenu);
 Vue.use(menuItem);
 Vue.use(MenuItemGroup);
-
+Vue.use(dropdownMenu);
+Vue.use(dropdownItem);
+Vue.use(dropdown);
 new Vue({
   router,
   render: (h) => h(App),

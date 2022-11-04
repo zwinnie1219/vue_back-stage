@@ -129,11 +129,12 @@ export default {
 
 <style lang="less" scoped>
 .el-menu-vertical-demo:not(.el-menu--collapse) {
-  /* width: 300px; */
+  width: 300px;
   min-height: 400px;
 }
 .el-menu {
   height: 100vh;
+  padding: 0;
   h3 {
     color: aliceblue;
     text-align: center;
