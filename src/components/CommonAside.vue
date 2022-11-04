@@ -9,7 +9,12 @@
     active-text-color="#ffd04b"
   >
     <h3>通用后台管理系统</h3>
-    <el-menu-item v-for="item in noClidren" :index="item.name" :key="item.name">
+    <el-menu-item
+      v-for="item in noClidren"
+      :index="item.name"
+      :key="item.name"
+      @click="clickMenu(item)"
+    >
       <i :class="`el-icon-${item.icon}`"></i>
       <span slot="title">{{ item.name }}</span>
     </el-menu-item>
@@ -24,7 +29,9 @@
         :key="child.name"
         :index="child.name"
       >
-        <el-menu-item :index="child.name">{{ child.name }}</el-menu-item>
+        <el-menu-item :index="child.name" @click="clickSubMenu(child)">{{
+          child.name
+        }}</el-menu-item>
       </el-menu-item-group>
     </el-submenu>
   </el-menu>
@@ -75,14 +82,6 @@ export default {
               icon: "setting",
               url: "Other/pageTwo",
             },
-
-            {
-              path: "/page3",
-              name: "page3",
-              label: "页面三",
-              icon: "setting",
-              url: "Other/pageThree",
-            },
           ],
         },
       ],
@@ -94,6 +93,24 @@ export default {
     },
     handleClose(key, keyPath) {
       console.log(key, keyPath);
+    },
+    //router:整个router实例
+    //route:当前页面的path路径
+    clickMenu(item) {
+      if (
+        this.$route.path !== item.path &&
+        !(this.$route.path === "/home" && item.path === "/")
+      ) {
+        this.$router.push(item.path);
+      }
+    },
+    clickSubMenu(item) {
+      if (
+        this.$route.path !== item.path &&
+        !(this.$route.path === "/home" && item.path === "/")
+      ) {
+        this.$router.push(item.path);
+      }
     },
   },
   computed: {
