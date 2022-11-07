@@ -14,13 +14,17 @@ import {
   dropdownMenu,
   dropdownItem,
   dropdown,
+  col,
+  Card,
+  table,
+  tableColumn,
 } from "element-ui";
 
 import "element-ui/lib/theme-chalk/index.css";
 import App from "./App.vue";
 import router from "./router/index";
 import store from "./store/index";
-
+import "../mock/mock";
 Vue.config.productionTip = false;
 
 //按需引入
@@ -39,6 +43,11 @@ Vue.use(MenuItemGroup);
 Vue.use(dropdownMenu);
 Vue.use(dropdownItem);
 Vue.use(dropdown);
+Vue.use(col);
+Vue.use(row);
+Vue.use(Card);
+Vue.use(table);
+Vue.use(tableColumn);
 
 //挂载到vue实例中，就可以使用this.$...访问到该方法
 new Vue({

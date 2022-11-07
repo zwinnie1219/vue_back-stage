@@ -31,5 +31,5 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 ### Technology stack
 
 ```
-vue less element-ui vue-router vueX
+vue less element-ui vue-router vueX mockjs axios
 ```
