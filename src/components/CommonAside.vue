@@ -16,7 +16,7 @@
       @click="clickMenu(item)"
     >
       <i :class="`el-icon-${item.icon}`"></i>
-      <span slot="title">{{ item.name }}</span>
+      <span slot="title">{{ item.label }}</span>
     </el-menu-item>
 
     <el-submenu index="item.label" v-for="item in hasClidren" :key="item.label">

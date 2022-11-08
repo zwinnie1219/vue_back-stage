@@ -29,12 +29,12 @@ export default {
         //柱状图
         userData: [
           { date: "周一", new: 121, active: 123 },
-          { date: "周二", new: 121, active: 123 },
-          { date: "周三", new: 121, active: 123 },
-          { date: "周四", new: 121, active: 123 },
+          { date: "周二", new: 121, active: 13 },
+          { date: "周三", new: 11, active: 123 },
+          { date: "周四", new: 121, active: 12 },
           { date: "周五", new: 121, active: 123 },
-          { date: "周六", new: 121, active: 123 },
-          { date: "周天", new: 121, active: 123 },
+          { date: "周六", new: 1, active: 123 },
+          { date: "周天", new: 121, active: 23 },
         ],
         //折线图
         orderData: {
