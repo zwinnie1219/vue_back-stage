@@ -44,7 +44,6 @@ export default {
     },
     clickTab(item) {
       if (item.name === "home") {
-        console.log(111);
         let list = this.$store.state.tab.tabList;
         list.splice(1, list.length - 1);
       }

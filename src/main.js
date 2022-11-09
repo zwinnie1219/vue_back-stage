@@ -20,6 +20,7 @@ import {
   tableColumn,
   breadcrumb,
   breadcrumbItem,
+  tag,
 } from "element-ui";
 
 import "element-ui/lib/theme-chalk/index.css";
@@ -27,6 +28,7 @@ import App from "./App.vue";
 import router from "./router/index";
 import store from "./store/index";
 import "../mock/mock";
+
 Vue.config.productionTip = false;
 
 //按需引入
@@ -52,6 +54,7 @@ Vue.use(table);
 Vue.use(tableColumn);
 Vue.use(breadcrumb);
 Vue.use(breadcrumbItem);
+Vue.use(tag);
 
 //挂载到vue实例中，就可以使用this.$...访问到该方法
 new Vue({
