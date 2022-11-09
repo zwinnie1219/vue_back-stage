@@ -24,16 +24,7 @@
       </el-card>
 
       <div class="card-box">
-        <!-- <el-table :data="tableData">
-          <el-table-column
-            v-for="item in titleDate"
-            :key="item.label"
-            :prop="item.prop"
-            :label="item.label"
-          >
-          </el-table-column>
-        </el-table> -->
-        <el-table :data="tableData" stripe style="width: auto; height: 413px">
+        <el-table :data="tableData" style="width: auto; height: 413px">
           <el-table-column prop="date" label="日期" width="180">
           </el-table-column>
           <el-table-column prop="name" label="姓名" width="180">
@@ -73,7 +64,7 @@
         </div>
         <div class="ceakCon">
           <div
-            style="height: 210px; margin-top: -30px"
+            style="height: 210px; margin-top: -10px"
             ref="echarts3"
             class="ech2"
           ></div>
@@ -363,6 +354,7 @@ export default {
       width: 48%;
       height: 200px;
       box-shadow: 3px 2px 2px rgb(230, 227, 227);
+      overflow: hidden;
       .ech2 {
         display: flex;
         justify-content: center;

@@ -7,11 +7,13 @@
     background-color="#545c64"
     text-color="#fff"
     active-text-color="#ffd04b"
+    :default-active="$route.path"
+    ref="tabItem"
   >
     <h3>{{ isCollapse ? "后台" : "通用后台管理系统" }}</h3>
     <el-menu-item
       v-for="item in noClidren"
-      :index="item.name"
+      :index="item.path"
       :key="item.name"
       @click="clickMenu(item)"
     >
@@ -102,6 +104,7 @@ export default {
         !(this.$route.path === "/home" && item.path === "/")
       ) {
         this.$router.push(item.path);
+        this.$store.commit("selectMenu", item);
       }
     },
     clickSubMenu(item) {
@@ -110,6 +113,7 @@ export default {
         !(this.$route.path === "/home" && item.path === "/")
       ) {
         this.$router.push(item.path);
+        this.$store.commit("selectMenu", item);
       }
     },
   },

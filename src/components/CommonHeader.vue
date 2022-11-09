@@ -1,8 +1,21 @@
 <template>
   <div class="heardBox">
     <div class="l-hearder">
-      <el-button icon="el-icon-menu" @click="changeState"></el-button>
-      <span class="headerHomePage">首页</span>
+      <el-button
+        icon="el-icon-menu"
+        @click="changeState"
+        class="header-icon"
+      ></el-button>
+      <el-breadcrumb separator="/">
+        <el-breadcrumb-item
+          v-for="item in tagList"
+          :key="item.path"
+          :to="{ path: item.path }"
+          @click.native="clickTab(item)"
+          class="my-color"
+          >{{ item.label }}</el-breadcrumb-item
+        >
+      </el-breadcrumb>
     </div>
     <div class="r-hearder">
       <el-dropdown placement="bottom">
@@ -20,12 +33,25 @@
 </template>
 
 <script>
+import { mapState } from "vuex";
 export default {
-  data() {},
+  data() {
+    return {};
+  },
   methods: {
     changeState() {
       this.$store.commit("collapseMenu");
     },
+    clickTab(item) {
+      if (item.name === "home") {
+        console.log(111);
+        let list = this.$store.state.tab.tabList;
+        list.splice(1, list.length - 1);
+      }
+    },
+  },
+  computed: {
+    ...mapState({ tagList: (state) => state.tab.tabList }),
   },
 };
 </script>
@@ -39,11 +65,24 @@ export default {
   justify-content: space-between;
   padding: 0 20px;
   .l-hearder {
-    margin-top: 10px;
-    .headerHomePage {
-      color: aliceblue;
-      font-size: 13px;
-      margin-left: 20px;
+    margin-top: 15px;
+    display: flex;
+    .header-icon {
+      width: 30px;
+      height: 30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .el-breadcrumb {
+      margin-top: 10px;
+      margin-left: 10px;
+      .my-color /deep/ .el-breadcrumb__inner {
+        color: rgb(244, 234, 234);
+        .my-color/deep/ .el-breadcrumb__separator {
+          color: aliceblue;
+        }
+      }
     }
   }
   .el-dropdown {

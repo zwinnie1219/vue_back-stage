@@ -18,6 +18,8 @@ import {
   Card,
   table,
   tableColumn,
+  breadcrumb,
+  breadcrumbItem,
 } from "element-ui";
 
 import "element-ui/lib/theme-chalk/index.css";
@@ -48,6 +50,8 @@ Vue.use(row);
 Vue.use(Card);
 Vue.use(table);
 Vue.use(tableColumn);
+Vue.use(breadcrumb);
+Vue.use(breadcrumbItem);
 
 //挂载到vue实例中，就可以使用this.$...访问到该方法
 new Vue({
